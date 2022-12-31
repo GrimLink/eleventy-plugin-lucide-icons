@@ -1,68 +1,83 @@
-# Eleventy Plugin - Sass
+# Eleventy Plugin - Lucide Icons
 
-[![NPM version](https://img.shields.io/npm/v/@grimlink/eleventy-plugin-sass)](https://www.npmjs.org/package/@grimlink/eleventy-plugin-sass)
-![license](https://img.shields.io/github/license/GrimLink/eleventy-plugin-sass)
+[![NPM version](https://img.shields.io/npm/v/@grimlink/eleventy-plugin-lucide-icons)](https://www.npmjs.org/package/@grimlink/eleventy-plugin-lucide-icons)
+![license](https://img.shields.io/github/license/GrimLink/eleventy-plugin-lucide-icons)
 
-Simple 11ty config wrapper, for running Sass directly as custom template.
+An Eleventy shortcode, allows lucide-icons to be embedded as inline svg into templates.
 
 ## Installation
 
 This eleventy plugin requires;
 
 - Eleventy v1.0.0 or higher
-- Sass (Dart Sass) v1.45.0 or higher
 
 First install this plugin with;
 
 ```bash
-npm install @grimlink/eleventy-plugin-sass
+npm install @grimlink/eleventy-plugin-lucide-icons
 ```
-
-Second install Sass;
-
-```bash
-npm install sass
-```
-
-> **Note** We offer the freedom to pick your own Sass version.
->
-> This allows you to update the Sass version,
-> without needing to rely on this plugin for that.
 
 ## How to use
 
 Add to Configuration File (Usually .eleventy.js) the following;
 
 ```js
-const eleventySass = require("@grimlink/eleventy-plugin-sass");
-const sass = require("sass");
+const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(eleventySass, { sass });
+  eleventyConfig.addPlugin(lucideIcons);
 };
 ```
 
-You need to pass sass as an option,
-But besides that, thats pretty much it.
+Advanced usage:
 
-Now any SCSS files,
-that don't start with a underscore,
-will compile to CSS in de output directory.
+```js
+const lucideIcons = require('eleventy-plugin-lucide-icons');
 
-### Options
+module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(lucideIcons, {
+        "class": "custom-class",
+        "xmlns": "http://www.w3.org/2000/svg",
+        "width": 24,
+        "height": 24,
+        "viewBox": "0 0 24 24",
+        "fill": "none",
+        "stroke": "currentColor",
+        "stroke-width": 2,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round",
+    });
+};
+```
 
-There are off course options to tweak to your preference.
 
-| option       | Default          | Description                        |
-| ------------ | ---------------- | ---------------------------------- |
-| sass         |                  | the sass compiler to use           |
-| outputPath   | ""               | Output path for your CSS file(s)   |
-| outputStyle  | "expanded"       | Options are expanded or compressed |
-| includePaths | ["node_modules"] | List of extra folders to include   |
-| sourceMap    | false            | If you want to use source maps     |
+## What does it do?
 
-If `outputPath` is empty,
-this plugin will use the default inputPath as the outputPath.
+The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like this:
 
-If you want to force this to for example `_site/css`,
-use `outputPath = "css"` as value.
+```nunjucks
+{% lucide "shopping-cart" %}
+```
+
+into HTML code like this:
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8" cy="21" r="1"/>
+  <circle cx="19" cy="21" r="1"/>
+  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+</svg>
+```
+
+
+## Adding options per icon
+
+```nunjucks
+{% lucide "shopping-cart", { "stroke": "#1A202C", "stroke-width": "3" } %}
+```
+
+### shorthand for width and height
+
+```nunjucks
+{% lucide "shopping-cart", { "size": "32" } %}
+```
