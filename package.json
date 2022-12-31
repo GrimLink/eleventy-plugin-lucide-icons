@@ -1,0 +1,35 @@
+{
+  "name": "@grimlink/eleventy-plugin-lucide-icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "npm --prefix _test_ run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrimLink/eleventy-plugin-sass.git"
+  },
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "11ty",
+    "11ty-plugin",
+    "lucide"
+  ],
+  "author": "GrimLink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GrimLink/eleventy-plugin-lucide-icons/issues"
+  },
+  "homepage": "https://github.com/GrimLink/eleventy-plugin-lucide-icons#readme",
+  "11ty": {
+    "compatibility": ">=1.0.0"
+  },
+  "dependencies": {
+    "lucide-static": "^0.104.0"
+  }
+}
