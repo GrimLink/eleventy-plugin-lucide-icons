@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/@grimlink/eleventy-plugin-lucide-icons)](https://www.npmjs.org/package/@grimlink/eleventy-plugin-lucide-icons)
 ![license](https://img.shields.io/github/license/GrimLink/eleventy-plugin-lucide-icons)
 
-An Eleventy shortcode, allows lucide-icons to be embedded as inline svg into templates.
+This Eleventy plugin enables the inclusion of lucide-icons as inline SVG elements.
 
 ## Installation
 
