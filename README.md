@@ -5,6 +5,8 @@
 
 This Eleventy plugin enables the inclusion of lucide-icons as inline SVG elements.
 
+This enables you to use icons to enhance the visual appeal and usability of your website by adding them to your layouts with just a shortcode.
+
 ## Installation
 
 This eleventy plugin requires;
