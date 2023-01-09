@@ -1,11 +1,9 @@
 {
   "name": "@grimlink/eleventy-plugin-lucide-icons",
   "version": "1.0.0",
-  "description": "An Eleventy shortcode, allows lucide-icons to be embedded as inline svg into templates.",
+  "description": "This Eleventy plugin enables the inclusion of lucide-icons as inline SVG elements.",
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "scripts": {
     "test": "npm --prefix _test_ run build"
   },
@@ -13,13 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/GrimLink/eleventy-plugin-lucide-icons.git"
   },
-  "keywords": [
-    "eleventy",
-    "eleventy-plugin",
-    "11ty",
-    "11ty-plugin",
-    "lucide"
-  ],
+  "keywords": ["eleventy", "eleventy-plugin", "11ty", "11ty-plugin", "lucide"],
   "author": "GrimLink",
   "license": "MIT",
   "bugs": {
