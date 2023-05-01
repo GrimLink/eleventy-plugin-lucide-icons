@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2023-05-01
+### Changed
+- updated lucide-static from 0.129 to 0.190
+
 ## [1.0.1] - 2023-04-03
 ### Changed
-- updated lucide-static from 0.118.0 to 0.129.0
+- updated lucide-static from 0.118 to 0.129
 
 ## [1.0.0] - 2022-12-31
 Initial Release 🎉
