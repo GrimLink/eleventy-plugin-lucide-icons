@@ -1,6 +1,6 @@
 {
   "name": "@grimlink/eleventy-plugin-lucide-icons",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This Eleventy plugin enables the inclusion of lucide-icons as inline SVG elements.",
   "main": "index.js",
   "files": [
