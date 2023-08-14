@@ -30,6 +30,6 @@
     "compatibility": ">=1.0.0"
   },
   "dependencies": {
-    "lucide-static": "^0.257.0"
+    "lucide-static": "^0.263.0"
   }
 }
