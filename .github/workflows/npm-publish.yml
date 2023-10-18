@@ -13,7 +13,6 @@ env:
 jobs:
   publish-npm:
     if: github.repository == 'GrimLink/eleventy-plugin-lucide-icons'
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
