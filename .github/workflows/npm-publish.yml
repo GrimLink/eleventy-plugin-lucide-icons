@@ -8,7 +8,7 @@ on:
     types: [created]
 
 env:
-  NODE: 18
+  NODE: 20
 
 jobs:
   publish-npm:
