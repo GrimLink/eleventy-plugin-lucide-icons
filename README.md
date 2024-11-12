@@ -16,7 +16,7 @@ npm install @grimlink/eleventy-plugin-lucide-icons
 ```
 
 > [!NOTE]
-> This support all 11ty versions starting from version 1
+> This supports all 11ty versions starting from version 1
 
 ## How to use
 
