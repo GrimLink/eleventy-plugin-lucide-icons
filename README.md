@@ -9,19 +9,28 @@ This enables you to use icons to enhance the visual appeal and usability of your
 
 ## Installation
 
-This eleventy plugin requires;
-
-- Eleventy v1.0.0 or higher
-
 First install this plugin with;
 
 ```bash
 npm install @grimlink/eleventy-plugin-lucide-icons
 ```
 
+> [!NOTE]
+> This support all 11ty versions starting from version 1
+
 ## How to use
 
 Add to Configuration File (Usually .eleventy.js) the following;
+
+```js
+import eleventyLucideicons from "@grimlink/eleventy-plugin-lucide-icons";
+
+export default function (eleventyConfig) {
+    eleventyConfig.addPlugin(eleventyLucideicons,);
+}
+```
+
+<details><summary>CommenJS syntax (11ty v1 and v2)</summary>
 
 ```js
 const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
@@ -31,29 +40,30 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
+</details>
+
 Advanced usage:
 
 ```js
-const lucideIcons = require('eleventy-plugin-lucide-icons');
+const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
 
-module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(lucideIcons, {
-        "class": "custom-class",
-        "width": 24,
-        "height": 24,
-        "stroke": "currentColor",
-        "stroke-width": 2
-    });
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(lucideIcons, {
+    "class": "custom-class",
+    "width": 24,
+    "height": 24,
+    "stroke": "currentColor",
+    "stroke-width": 2
+  });
 };
 ```
-
 
 ## What does it do?
 
 The plugin turns [11ty shortcodes](https://www.11ty.dev/docs/shortcodes/) like this:
 
 ```nunjucks
-{% lucide "shopping-cart" %}
+{% lucide "squirrel" %}
 ```
 
 into HTML code like this:
