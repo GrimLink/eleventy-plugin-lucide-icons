@@ -1,13 +1,14 @@
----
-
----
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>11ty Plugin Lucice Icons - Demo</title>
-    <link href="https://unpkg.com/fylgja/fylgja.css" rel="stylesheet">
-</head>
-<body>
-    {% lucide "shopping-cart", { "size": "32" } %}
-</body>
+<html lang="en" class="h-full">
+    <head>
+        <title>11ty Plugin Lucice Icons - Demo</title>
+        <link href="https://unpkg.com/fylgja/fylgja.css" rel="stylesheet" />
+    </head>
+    <body class="min-h-full flex items-center justify-center">
+        <article class="p-6">
+            {% lucide "squirrel", { "size": "18" } %} {% lucide "squirrel", {
+            "size": "24" } %} {% lucide "squirrel", { "size": "32" } %} {%
+            lucide "squirrel" %}
+        </article>
+    </body>
 </html>

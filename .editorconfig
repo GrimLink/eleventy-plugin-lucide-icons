@@ -11,6 +11,6 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{css,scss,js,ts}]
+[*.{css,scss,js,ts,njk}]
 indent_size = 4
 max_line_length = 80

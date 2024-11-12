@@ -1,7 +1,7 @@
-const eleventyPluginLucideicons = require("../index");
+import eleventyLucideicons from "../index.js";
 
-module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(eleventyPluginLucideicons, {
+export default function (eleventyConfig) {
+    eleventyConfig.addPlugin(eleventyLucideicons, {
         size: 64,
     });
-};
+}
