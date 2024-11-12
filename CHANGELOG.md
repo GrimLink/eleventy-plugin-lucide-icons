@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2024-11-12
+### Changed
+- Update Lucide icons to v0.454,
+  **Minor Breaking Change** Includes icon name changes in https://github.com/lucide-icons/lucide/releases/tag/0.447.0
+
 ## [2.0.7] - 2024-10-07
 ### Changed
 - updated lucide-static to v0.446
