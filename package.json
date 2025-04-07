@@ -7,7 +7,8 @@
     "index.js"
   ],
   "scripts": {
-    "test": "npm --prefix _test_ run build"
+    "test": "npm --prefix _test_ run build",
+    "update-changelog": "node ./scripts/changelog.js"
   },
   "repository": {
     "type": "git",
