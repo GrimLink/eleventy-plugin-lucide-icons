@@ -1,0 +1,40 @@
+name: Version Update
+
+on:
+  pull_request:
+    types:
+      - closed
+
+env:
+  NODE: 20
+  GIT_USER: "Automated"
+  GIT_EMAIL: "actions[bot]@users.noreply.github.com"
+  GIT_BRANCH: actions/setup-release
+
+jobs:
+  version_update:
+    if: |
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'dependabot/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ env.NODE }}"
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm version patch --no-git-tag-version
+      - run: npm run update-changelog
+      - name: Creating PR for new Icons
+        run: |-
+          timestamp=$(date +"%Y-%m-%d")
+          git config user.name ${{ env.GIT_USER }}
+          git config user.email ${{ env.GIT_EMAIL }}
+          git checkout -b "${{ env.GIT_BRANCH }}-${timestamp}"
+          git add -A
+          git commit -m "Update icons with dependency update" || exit 0
+          git push --set-upstream origin ${{ env.GIT_BRANCH }}-${timestamp}
+          gh pr create --title "New version for dependency update" --body "This create a new Version based on the latest Lucide Icons update" -B main --label dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
