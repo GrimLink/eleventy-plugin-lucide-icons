@@ -1,4 +1,4 @@
-name: Version Update
+name: PreRelease
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
 env:
   NODE: 20
   GIT_USER: "Automated"
-  GIT_EMAIL: "actions[bot]@users.noreply.github.com"
+  GIT_EMAIL: "actions@users.noreply.github.com"
   GIT_BRANCH: actions/setup-release
 
 jobs:
@@ -26,14 +26,15 @@ jobs:
       - run: npm ci
       - run: npm version patch --no-git-tag-version
       - run: npm run update-changelog
-      - name: Creating PR for new Icons
+      - name: Creating PR for new version
         run: |-
           timestamp=$(date +"%Y-%m-%d")
           git config user.name ${{ env.GIT_USER }}
           git config user.email ${{ env.GIT_EMAIL }}
           git checkout -b "${{ env.GIT_BRANCH }}-${timestamp}"
+          git pull
           git add -A
-          git commit -m "Update icons with dependency update" || exit 0
+          git commit -m "Update version with dependency update" || exit 0
           git push --set-upstream origin ${{ env.GIT_BRANCH }}-${timestamp}
           gh pr create --title "New version for dependency update" --body "This create a new Version based on the latest Lucide Icons update" -B main --label dependencies
         env:
