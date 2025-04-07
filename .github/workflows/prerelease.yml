@@ -1,15 +1,15 @@
 name: PreRelease
 
-on:
-  pull_request:
-    types:
-      - closed
-
 env:
   NODE: 20
   GIT_USER: "Automated"
   GIT_EMAIL: "actions@users.noreply.github.com"
   GIT_BRANCH: actions/setup-release
+
+on:
+  pull_request:
+    types:
+      - closed
 
 jobs:
   version_update:
