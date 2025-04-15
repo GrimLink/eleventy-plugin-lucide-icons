@@ -30,7 +30,7 @@ export default function (eleventyConfig) {
 }
 ```
 
-<details><summary>CommenJS syntax (11ty v1 and v2)</summary>
+<details><summary>CommonJS syntax (11ty v1 and v2)</summary>
 
 ```js
 const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
