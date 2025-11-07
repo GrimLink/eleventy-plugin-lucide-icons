@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 2.1.10 - 2025-11-07
+### Changed
+- updated lucide-static to v0.552.0
+
 ## 2.1.9 - 2025-10-08
 ### Changed
 - updated lucide-static to v0.544.0
