@@ -7,8 +7,12 @@ on:
   release:
     types: [created]
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 env:
-  NODE: 20
+  NODE: 22
 
 jobs:
   publish-npm:
