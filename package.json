@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "npm --prefix _test_ run build",
-    "version": "node ./scripts/update-changelog.js && git add CHANGELOG.md"
+    "update-changelog": "node ./scripts/update-changelog.js"
   },
   "repository": {
     "type": "git",
