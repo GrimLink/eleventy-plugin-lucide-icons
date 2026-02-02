@@ -6,15 +6,15 @@ name: Publish Package
 on:
   release:
     types: [created]
-
-permissions:
-  id-token: write
-  contents: read
+  workflow_dispatch:
 
 jobs:
   publish-npm:
     if: github.repository == 'GrimLink/eleventy-plugin-lucide-icons'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
