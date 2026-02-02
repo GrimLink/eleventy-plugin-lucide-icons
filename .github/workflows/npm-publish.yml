@@ -8,19 +8,20 @@ on:
     types: [created]
   workflow_dispatch:
 
-permissions:
-  id-token: write # Required for OIDC
-  contents: read
-
 jobs:
-  publish:
+  publish-npm:
+    if: github.repository == 'GrimLink/eleventy-plugin-lucide-icons'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
-          registry-url: "https://registry.npmjs.org"
+          registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
