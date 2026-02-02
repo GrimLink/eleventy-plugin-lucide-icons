@@ -42,11 +42,9 @@ module.exports = function(eleventyConfig) {
 
 </details>
 
-Advanced usage:
+### Default Options
 
 ```js
-const lucideIcons = require("@grimlink/eleventy-plugin-lucide-icons");
-
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(lucideIcons, {
     "class": "custom-class",
@@ -56,6 +54,18 @@ module.exports = function(eleventyConfig) {
     "stroke-width": 2
   });
 };
+```
+
+### Adding options per icon
+
+```nunjucks
+{% lucide "shopping-cart", { "stroke": "#1A202C", "stroke-width": "3" } %}
+```
+
+#### Shorthand for width and height
+
+```nunjucks
+{% lucide "shopping-cart", { "size": "32" } %}
 ```
 
 ## What does it do?
@@ -74,17 +84,4 @@ into HTML code like this:
   <circle cx="19" cy="21" r="1"/>
   <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
 </svg>
-```
-
-
-## Adding options per icon
-
-```nunjucks
-{% lucide "shopping-cart", { "stroke": "#1A202C", "stroke-width": "3" } %}
-```
-
-### shorthand for width and height
-
-```nunjucks
-{% lucide "shopping-cart", { "size": "32" } %}
 ```
