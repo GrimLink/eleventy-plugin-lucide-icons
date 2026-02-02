@@ -23,10 +23,10 @@ npm install @grimlink/eleventy-plugin-lucide-icons
 Add to Configuration File (Usually .eleventy.js) the following;
 
 ```js
-import eleventyLucideicons from "@grimlink/eleventy-plugin-lucide-icons";
+import lucideIcons from "@grimlink/eleventy-plugin-lucide-icons";
 
 export default function (eleventyConfig) {
-    eleventyConfig.addPlugin(eleventyLucideicons,);
+    eleventyConfig.addPlugin(lucideIcons);
 }
 ```
 
