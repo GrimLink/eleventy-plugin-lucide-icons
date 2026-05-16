@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-## 2.1.14 - 2026-04-01
+## 2.2.0 - 2026-05-16
 ### Changed
-- updated lucide-static to v1.7.0
+- updated lucide-static to v1.16.0.
+  **Minor Breaking Change:** All branded icons have been removed. For branded icons, use Simple Icons instead.
 
 ## 2.1.13 - 2026-03-01
 ### Changed
